@@ -1,4 +1,4 @@
-Summary: Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra
+Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
 Version: 3.0.5
 Release: 1
@@ -36,7 +36,7 @@ make doc
 %makeinstall_std -C build
 
 %files
-%doc COPYING COPYING.LESSER html/ 
+%doc COPYING* build/doc/html/
 %dir %{_includedir}/eigen3/
 %{_includedir}/eigen3/*
 %{_datadir}/pkgconfig/*.pc
