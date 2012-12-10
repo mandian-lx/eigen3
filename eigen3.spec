@@ -1,11 +1,11 @@
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
-Version: 3.1.1
+Version: 3.0.5
 Release: 1
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
-Source0: http://bitbucket.org/eigen/eigen/get/%{version}.tar.bz2
+Source: http://bitbucket.org/eigen/eigen/get/%{version}.tar.bz2
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
 BuildRequires: ghostscript-common
@@ -23,7 +23,8 @@ Eigen is a lightweight C++ template library for vector and matrix
 math, a.k.a. linear algebra.
 
 %prep
-%setup -q -n eigen-eigen-43d9075b23ef
+
+%setup -q -n eigen-eigen-6e7488e20373
 
 %build
 %cmake
@@ -31,6 +32,7 @@ math, a.k.a. linear algebra.
 make doc
 
 %install
+
 %makeinstall_std -C build
 
 %files
@@ -38,3 +40,15 @@ make doc
 %dir %{_includedir}/eigen3/
 %{_includedir}/eigen3/*
 %{_datadir}/pkgconfig/*.pc
+
+
+%changelog
+* Sun Feb 12 2012 Oden Eriksson <oeriksson@mandriva.com> 3.0.5-1
++ Revision: 773646
+- fix build
+- 3.0.5
+- import eigen3
+
+
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 3.0.4-1
+- initial Mandriva package
