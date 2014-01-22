@@ -1,6 +1,6 @@
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
-Version: 3.0.5
+Version: 3.2
 Release: 1
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
@@ -22,33 +22,29 @@ BuildArch: noarch
 Eigen is a lightweight C++ template library for vector and matrix
 math, a.k.a. linear algebra.
 
-%prep
+%package devel
+Summary: Lightweight C++ template library for vector and matrix math
+Group: Development/C++
+%rename %name
 
-%setup -q -n eigen-eigen-6e7488e20373
+%description devel
+Eigen is a lightweight C++ template library for vector and matrix
+math, a.k.a. linear algebra.
+
+%prep
+%setup -q -n eigen-eigen-00316accdf7a
 
 %build
 %cmake
 %make
-make doc
+%make doc
 
 %install
 
 %makeinstall_std -C build
 
-%files
+%files devel
 %doc COPYING* build/doc/html/
 %dir %{_includedir}/eigen3/
 %{_includedir}/eigen3/*
 %{_datadir}/pkgconfig/*.pc
-
-
-%changelog
-* Sun Feb 12 2012 Oden Eriksson <oeriksson@mandriva.com> 3.0.5-1
-+ Revision: 773646
-- fix build
-- 3.0.5
-- import eigen3
-
-
-* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 3.0.4-1
-- initial Mandriva package
