@@ -1,11 +1,11 @@
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
-Version: 3.2
+Version: 3.2.1
 Release: 1
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
-Source: http://bitbucket.org/eigen/eigen/get/%{version}.tar.bz2
+Source0: http://bitbucket.org/eigen/eigen/get/%{version}.tar.bz2
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
 BuildRequires: ghostscript-common
@@ -32,7 +32,7 @@ Eigen is a lightweight C++ template library for vector and matrix
 math, a.k.a. linear algebra.
 
 %prep
-%setup -q -n eigen-eigen-00316accdf7a
+%setup -q -n eigen-eigen-6b38706d90a9
 
 %build
 %cmake
@@ -40,7 +40,6 @@ math, a.k.a. linear algebra.
 %make doc
 
 %install
-
 %makeinstall_std -C build
 
 %files devel
