@@ -47,6 +47,11 @@ math, a.k.a. linear algebra.
 %setup -q -n eigen-eigen-%{commit}
 
 %build
+%ifarch %arm
+export CC=gcc
+export CXX=g++
+%endif
+
 %cmake -DBLAS_LIBRARIES="cblas" -DSUPERLU_INCLUDES=%{_includedir}/SuperLU
 %make
 %make doc
