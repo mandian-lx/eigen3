@@ -26,7 +26,6 @@ BuildRequires: mpfr-devel
 BuildRequires: qt4-devel
 BuildRequires: SuperLU-devel
 BuildRequires: texlive
-BuildArch: noarch
 
 %description 
 Eigen is a lightweight C++ template library for vector and matrix
@@ -35,6 +34,7 @@ math, a.k.a. linear algebra.
 %package devel
 Summary: Lightweight C++ template library for vector and matrix math
 Group: Development/C++
+BuildArch: noarch
 %rename %name
 # not *strictly* a -static pkg, but the results are the same
 Provides: %{name}-static = %{version}-%{release}
@@ -47,12 +47,12 @@ math, a.k.a. linear algebra.
 %setup -q -n eigen-eigen-%{commit}
 
 %build
-
-%cmake -DBLAS_LIBRARIES="cblas" -DSUPERLU_INCLUDES=%{_includedir}/SuperLU \
 %ifarch %arm
-	CC=gcc CXX=g++
+export CC=gcc
+export CXX=g++
 %endif
 
+%cmake -DBLAS_LIBRARIES="cblas" -DSUPERLU_INCLUDES=%{_includedir}/SuperLU
 
 %make
 %make doc
