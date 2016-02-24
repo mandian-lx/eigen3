@@ -4,12 +4,12 @@
 # debuginfo package for the empty main package.
 %global debug_package %{nil}
 
-%global commit 10219c95fe65
+%global commit 07105f7124f9
 
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
-Version: 3.2.4
-Release: 2
+Version: 3.2.8
+Release: 1
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
@@ -26,6 +26,7 @@ BuildRequires: mpfr-devel
 BuildRequires: qt4-devel
 BuildRequires: SuperLU-devel
 BuildRequires: texlive
+BuildRequires: pkgconfig(xmu)
 
 %description 
 Eigen is a lightweight C++ template library for vector and matrix
