@@ -4,11 +4,11 @@
 # debuginfo package for the empty main package.
 %global debug_package %{nil}
 
-%global commit 07105f7124f9
+%global commit 67e894c6cd8f
 
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
-Version: 3.2.8
+Version: 3.3.3
 Release: 1
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
@@ -69,3 +69,4 @@ rm -f doc/html/unsupported/installdox
 %dir %{_includedir}/eigen3/
 %{_includedir}/eigen3/*
 %{_datadir}/pkgconfig/*.pc
+%{_datadir}/eigen3
