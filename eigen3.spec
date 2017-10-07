@@ -4,7 +4,7 @@
 # debuginfo package for the empty main package.
 %global debug_package %{nil}
 
-%global commit 67e894c6cd8f
+%global commit 5a0156e40feb
 
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
