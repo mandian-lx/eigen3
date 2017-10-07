@@ -8,7 +8,7 @@
 
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
-Version: 3.3.3
+Version: 3.3.4
 Release: 0
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
@@ -70,3 +70,4 @@ rm -f doc/html/unsupported/installdox
 %{_includedir}/eigen3/*
 %{_datadir}/pkgconfig/*.pc
 %{_datadir}/eigen3
+
